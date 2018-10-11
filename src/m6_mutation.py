@@ -4,8 +4,8 @@ In this module, you mutate by CHANGING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and JUSTIN OGASAWARA.
+"""  # done: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 # ----------------------------------------------------------------------
 # STUDENTS:
@@ -54,7 +54,6 @@ def run_test_RETURN_replace_negatives_by_zeros():
              correct_returned_value,
              correct_argument_value_after_function_call)
 
-
 def run_test(function_to_test, argument, run_test_number,
              correct_returned_value,
              correct_argument_value_after_function_call):
@@ -78,7 +77,6 @@ def run_test(function_to_test, argument, run_test_number,
     if passed_check1 and passed_check2:
         print('  Your code PASSES Test {}.'.format(run_test_number))
 
-
 def check_returned_value(actual_returned_value, correct_returned_value):
     """
     Checks whether the two given returned-values are equal.
@@ -96,7 +94,6 @@ def check_returned_value(actual_returned_value, correct_returned_value):
               actual_returned_value)
 
         return False
-
 
 def check_argument(actual_argument_value, correct_argument_value):
     """
@@ -116,8 +113,14 @@ def check_argument(actual_argument_value, correct_argument_value):
 
         return False
 
-
 def RETURN_replace_negatives_by_zeros(numbers):
+    new_list = []
+    for k in range(len(numbers)):
+        if numbers[k]<0:
+            new_list = new_list + [0]
+        else:
+            new_list = new_list + [numbers[k]]
+    return new_list
     """
     RETURNs a NEW list that is the same as the given list of numbers,
     but with each negative number in the list replaced by zero.
@@ -129,12 +132,10 @@ def RETURN_replace_negatives_by_zeros(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
-
-
 def run_test_MUTATE_replace_negatives_by_zeros():
     """ Tests the   MUTATE_replace_negatives_by_zeros   function. """
     print()
@@ -170,8 +171,10 @@ def run_test_MUTATE_replace_negatives_by_zeros():
              correct_returned_value,
              correct_argument_value_after_function_call)
 
-
 def MUTATE_replace_negatives_by_zeros(numbers):
+    for k in range(len(numbers)):
+        if numbers[k] < 0:
+            numbers[k] = 0
     """
     MUTATES the given list of numbers so that
     each negative number in the list is replaced by zero
@@ -185,11 +188,10 @@ def MUTATE_replace_negatives_by_zeros(numbers):
 
     Precondition: The argument is a list of numbers.
     """
-    # TODO: 3. First, READ THE ABOVE TEST CODE.
+    # DONE: 3. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
-
 # ----------------------------------------------------------------------
 # If this module is running at the top level (as opposed to being
 # imported by another module), then call the 'main' function.

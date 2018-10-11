@@ -4,8 +4,8 @@ In this module, you mutate by DELETING elements of a list.
 
 Authors: David Mutchler, Amanda Stouder, Chandan Rupakheti, Katie Dion,
          Claude Anderson, Delvin Defoe, Curt Clifton, their colleagues,
-         and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         and JUSTIN OGASAWARA.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m6_mutation
 
@@ -50,7 +50,6 @@ def run_test_RETURN_delete_negatives():
                          correct_returned_value,
                          correct_argument_value_after_function_call)
 
-
 def RETURN_delete_negatives(numbers):
     """
     Returns a NEW list that is the same as the given list of numbers,
@@ -65,15 +64,18 @@ def RETURN_delete_negatives(numbers):
       :type numbers: list
     where the list is a list of numbers.
     """
-    # TODO: 2. First, READ THE ABOVE TEST CODE.
+    new_list = []
+    for k in range(len(numbers)):
+        if numbers[k] >= 0:
+            new_list = new_list + [numbers[k]]
+    return new_list
+    # DONE: 2. First, READ THE ABOVE TEST CODE.
     #          Make sure that you understand it.
     #          In particular, note how it calls the   run_test   function
     #          from the module   m6_mutation   by using the notation:
     #             m6_mutation.run_test(...)
     #          Then, IMPLEMENT and test THIS FUNCTION
     #          (using the above code for testing).
-
-
 def run_test_MUTATE_delete_negatives():
     """ Tests the   MUTATE_delete_negatives   function. """
     print()
@@ -109,8 +111,15 @@ def run_test_MUTATE_delete_negatives():
                          correct_returned_value,
                          correct_argument_value_after_function_call)
 
-
 def MUTATE_delete_negatives(numbers):
+    my_list = numbers
+    for k in range(len(my_list)):
+        if my_list[k] < 0:
+            del numbers[k]
+
+
+
+
     """
     MUTATES the given list of numbers so that each negative number
     in the list is DELETED from the list.
